@@ -1,6 +1,11 @@
-this file view controller
+this is the file view controller
 
-use tkinter for graphics
-functions 
+Main Point: print out data from the game in a visually pleasing manner
+
+Main Methods:
+
+
+Main Inputs:
+
 
 primarily sasha and andreas
