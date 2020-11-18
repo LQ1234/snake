@@ -2,3 +2,5 @@ this file view controller
 
 use tkinter for graphics
 functions 
+
+primarily sasha and andreas
