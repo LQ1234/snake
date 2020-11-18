@@ -1,0 +1,11 @@
+this is the file view controller
+
+Main Point: print out data from the game in a visually pleasing manner
+
+Main Methods:
+
+
+Main Inputs:
+
+
+primarily sasha and andreas
