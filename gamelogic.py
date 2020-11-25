@@ -3,7 +3,7 @@ from food import Food
 from random import randrange
 
 class GameLogic:
-    def __init__(self,width,height):
+    def __init__(self,width, height):
 
         self.width=width
         self.height=height
@@ -16,11 +16,11 @@ class GameLogic:
 
         self.add_new_food()
 
-    def change_direction(self,direction):
+    def change_direction(self, direction):
         if (self.direction_is_legal(direction)):
             self.next_direction=direction
 
-    def direction_is_legal(direction):
+    def direction_is_legal(self, direction):
         if (direction == "up"):
             return False if (self.next_direction == "down") else True
         if (direction == "down"):
@@ -31,13 +31,13 @@ class GameLogic:
             return False if (self.next_direction == "right") else True
 
 
-    def check_collision(self,position):
+    def check_collision(self, position):
         return(self.check_self_collision(position) or self.check_borderposition(position))
 
-    def check_self_collision(self,position):
+    def check_self_collision(self, position):
         return(position in self.snake.body)
 
-    def check_borderposition(self,position):
+    def check_borderposition(self, position):
         return(
             position[0]>=0 and
             position[1]>=0 and
