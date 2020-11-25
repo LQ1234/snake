@@ -1,3 +1,3 @@
 class Food:
-	def __init__(self, position):
+    def __init__(self, position):
         self.position=position
