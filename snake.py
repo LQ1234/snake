@@ -7,20 +7,20 @@ class ClassName(object):
 
 class Snake():
 
-	def __init__(self, initial_position)
-		self.body = [initial_position] #we are not using linked list anymore
+    def __init__(self, initial_position)
+        self.body = [initial_position] #we are not using linked list anymore
 
 
-	def move(self, position):
+    def move(self, position):
         pass
 
-	def add_segment(position):#adds to beginning
+    def add_segment(position):#adds to beginning
         pass
 
-	def remove_segment():#removes from end
+    def remove_segment():#removes from end
         pass
 
-	def size_of_snake():
+    def size_of_snake():
         pass
 
     def get_head():
