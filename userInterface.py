@@ -36,13 +36,17 @@ class UserInterface:
 		pass
 
 	def run_game(self):
-		while True: #main game loop
+		loop = True
+		while loop: #main game loop
 			clock.tick(10) #sets how many times per second loop will run
 
-			screen.fill(0, 0, 0)
+			screen.fill((55, 250, 10))
 
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT:
-					break
+					loop = False
 
 			pygame.display.flip()
+
+a = UserInterface()
+a.run_game()
