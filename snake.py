@@ -6,7 +6,7 @@ class ClassName(object):
         self.arg = arg
 
 class Snake():
-
+    
     def __init__(self, initial_position)
         self.body = [initial_position] #we are not using linked list anymore
 
@@ -15,13 +15,13 @@ class Snake():
         pass
 
     def add_segment(position):#adds to beginning
-        pass
+        body.insert(0, position)
 
     def remove_segment():#removes from end
-        pass
+        body.pop(len(body) - 1)
 
     def size_of_snake():
-        pass
+        return len(body)
 
     def get_head():
-        pass
+        return body[0]
