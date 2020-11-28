@@ -88,7 +88,7 @@ class GameLogic:
 
     def add_new_food(self):
         canidate_position=self.generate_random_position()
-        while(check_self_collision(canidate_position)): #make sure that the food is not in the snake
+        while (self.check_self_collision(canidate_position)): #make sure that the food is not in the snake
             canidate_position=self.generate_random_position()
 
         self.food=Food(canidate_position)
