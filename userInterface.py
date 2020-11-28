@@ -31,14 +31,14 @@ class UserInterface:
 	
 	def get_keyboard_input(self): #give game_logic key input
 		if event.type == pygame.KEYDOWN:
-		    if event.key == pygame.K_LEFT or event.key == ord('a'):
-			return ("left")
-		    if event.key == pygame.K_RIGHT or event.key == ord('d'):
-			return ("right")
-		    if event.key == pygame.K_UP or event.key == ord('w'):
-		    	return ("up")
-		    if event.key == pygame.K_DOWN or event.key == ord('s'):
-			return ("down")
+			if event.key == pygame.K_LEFT or event.key == ord('a'):
+				return ("left")
+			if event.key == pygame.K_RIGHT or event.key == ord('d'):
+				return ("right")
+			if event.key == pygame.K_UP or event.key == ord('w'):
+				return ("up")
+			if event.key == pygame.K_DOWN or event.key == ord('s'):
+				return ("down")
 
 	def blit_screen(self): #use blit method for pygame to display objects
 		pass

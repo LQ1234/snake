@@ -11,8 +11,8 @@ class GameLogic:
 
         self.next_direction = "right" #possibly change to ints or something else
 
-        self.food = None
-        self.snake = Snake(self.generate_random_position())
+        self.food = None # can we also have random start position for food?
+        self.snake = Snake(self.generate_random_position()) # need to get starting position in ui
 
         self.add_new_food()
 
