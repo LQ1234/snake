@@ -1,7 +1,13 @@
-class Snake():
-    
-    def __init__(self, initial_position):
-        self.body = [initial_position] #store position as tuple of x, y
+import pygame
+
+
+
+class Snake(pygame.sprite.Sprite):
+
+    def __init__(self, initial_position, ui):
+        self.body = [initial_position] #store position as tuple of x, ys
+        self.ui = ui
+        pygame.sprite.Sprite.__init__(ui.sprites, ui.snake_segment)
 
     def move(self, position):
         pass
