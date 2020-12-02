@@ -50,7 +50,6 @@ class UserInterface:
 
 	def __init__(self):
 		self.snake = [] #figure out initial snake position
-
 		self.food = pygame.sprite.Group()
 		self.snake_segments = pygame.sprite.Group()
 		self.sprites = pygame.sprite.Group()
