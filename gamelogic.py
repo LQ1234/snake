@@ -3,7 +3,7 @@ from food import Food
 from random import randrange
 
 class GameLogic:
-    def __init__(self,width, height):
+    def __init__(self, width, height):
 
         self.width=width
         self.height=height
