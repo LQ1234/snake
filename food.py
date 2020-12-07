@@ -6,4 +6,5 @@ class Food(pygame.sprite.Sprite):
         self.position=position
         if ui is not None:
             self.ui = ui
-            pygame.sprite.Sprite.__init__(ui.sprites, ui.food)
+            self.groups = ui.sprites, ui.food
+            pygame.sprite.Sprite.__init__(self, ui.groups)

@@ -37,10 +37,13 @@ BOARD_COLOR = (55, 250, 10) # default board color in RGB
 FRAMERATE = 10
 
 
+screen=None
+clock=None
 
-pygame.init()
-screen = pygame.display.set_mode(window_size)
-clock = pygame.time.Clock()
+def init():
+	pygame.init()
+	screen = pygame.display.set_mode(window_size)
+	clock = pygame.time.Clock()
 #----------------------------------------------------------
 
 
@@ -50,7 +53,6 @@ class UserInterface:
 
 	def __init__(self):
 		self.snake = [] #figure out initial snake position
-
 		self.food = pygame.sprite.Group()
 		self.snake_segments = pygame.sprite.Group()
 		self.sprites = pygame.sprite.Group()
@@ -84,5 +86,7 @@ class UserInterface:
 
 			pygame.display.flip()
 
-a = UserInterface()
-a.run_game()
+if __name__ == '__main__':
+	init()
+	a = UserInterface()
+	a.run_game()
