@@ -39,23 +39,23 @@ class GameLogic:
 
     def check_borderposition(self, position):
         return(
-            position[0]>=0 and
-            position[1]>=0 and
-            position[0]<self.width and
-            position[1]<self.height
+            position[0]<0 or
+            position[1]<0 or
+            position[0]>=self.width or
+            position[1]>=self.height
         )
 
     def check_food_collision(self,position):
+
         if(self.food is None):
             return(False)
-
         return self.food.position==position
 
     def is_game_over(self):
         return(self.game_over)
 
     def do_turn(self):
-        next_position=self.snake.get_head()
+        next_position=self.snake.get_head().copy()
         if (self.next_direction == "up"):
             next_position[1]-=1
         elif(self.next_direction == "down"):
@@ -84,7 +84,7 @@ class GameLogic:
 
 
     def generate_random_position(self): #helper
-        return((randrange(self.width),randrange(self.height)))
+        return([randrange(self.width),randrange(self.height)])
 
     def add_new_food(self):
         canidate_position=self.generate_random_position()
@@ -92,3 +92,23 @@ class GameLogic:
             canidate_position=self.generate_random_position()
 
         self.food=Food(canidate_position)
+
+    def debug_draw_board(self):
+        board=[[" "]*self.width for _ in range(self.height)]
+
+        for pos in self.snake.body:
+            board[pos[1]][pos[0]]="*"
+        board[self.snake.body[0][1]][self.snake.body[0][0]]="H"
+        board[self.food.position[1]][self.food.position[0]]="F"
+
+        for lin in board:
+            print("| "+" ".join(lin)+" |")
+
+if __name__ == '__main__':
+    gl = GameLogic(5,5)
+    while(True):
+        gl.debug_draw_board()
+        gl.next_direction=input()
+        gl.do_turn()
+        if(gl.game_over):
+            break

@@ -4,10 +4,11 @@ import pygame
 
 class Snake(pygame.sprite.Sprite):
 
-    def __init__(self, initial_position, ui):
+    def __init__(self, initial_position, ui=None):
         self.body = [initial_position] #store position as tuple of x, ys
-        self.ui = ui
-        pygame.sprite.Sprite.__init__(ui.sprites, ui.snake_segment)
+        if ui is not None:
+            self.ui = ui
+            pygame.sprite.Sprite.__init__(ui.sprites, ui.snake_segment)
 
     def move(self, position):
         pass
