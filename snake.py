@@ -10,8 +10,15 @@ class Snake(pygame.sprite.Sprite):
             self.ui = ui
             self.groups = ui.sprites, ui.snake_segment
             pygame.sprite.Sprite.__init__(self, self.groups)
-            self.rect = pygame.Rect(initial_position[0], initialPosition[1], userInterface.x_spacing, userInterface.y_spacing)
-            self.position = Vector2(initialPosition[0], initialPosition[1])
+
+    @property
+    def rect(self):
+        head=self.get_head()
+        return(pygame.Rect(head[0], head[1], userInterface.x_spacing, userInterface.y_spacing))
+    @property
+    def position(self):
+        head=self.get_head()
+        return(pygame.Vector2(head[0], head[1]))
 
 
     def move(self, position):

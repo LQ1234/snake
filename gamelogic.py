@@ -49,7 +49,7 @@ class GameLogic:
 
         if(self.food is None):
             return(False)
-        return self.food.position==position
+        return self.food.pos==position
 
     def is_game_over(self):
         return(self.game_over)
@@ -99,7 +99,7 @@ class GameLogic:
         for pos in self.snake.body:
             board[pos[1]][pos[0]]="*"
         board[self.snake.body[0][1]][self.snake.body[0][0]]="H"
-        board[self.food.position[1]][self.food.position[0]]="F"
+        board[self.food.pos[1]][self.food.pos[0]]="F"
 
         for lin in board:
             print("| "+" ".join(lin)+" |")
@@ -110,5 +110,6 @@ if __name__ == '__main__':
         gl.debug_draw_board()
         gl.next_direction=input()
         gl.do_turn()
+        print(gl.food.position)
         if(gl.game_over):
             break
