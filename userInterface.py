@@ -17,7 +17,7 @@ board_size = (BOARD_WIDTH, BOARD_HEIGHT) # not in pixels, in squares
 #not final here
 """
 window_size = pygame.Vector2(WINDOW_WIDTH, WINDOW_HEIGHT)
-board_size = pygame.Vectro2(BOARD_WIDTH, BOARD_HEIGHT)
+board_size = pygame.Vector2(BOARD_WIDTH, BOARD_HEIGHT)
 """
 
 #space between each
